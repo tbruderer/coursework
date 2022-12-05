@@ -30,8 +30,8 @@ public class Viewitemdetails extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,10 +45,10 @@ public class Viewitemdetails extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/courseworkalbumcovers.png"))); // NOI18N
         jLabel3.setText("jLabel3");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Released - 1966\nunder columbia records\n\ntrack 1 - Rainy Day Woman #12 & 35\n4:30\ntrack 2 - Pledging My Time\n3:50\ntrack 3 - Visions of Johanna\n7:33\ntrack 4 - One of Us Must Know (Sooner or Later)\n4:55\ntrack 5 - I Want You\n3:06\ntrack 6 - Stuck Inside of Mobile With the Memphis Blues Again\n7:06\ntrack 7 - Leopard‐Skin Pill‐Box Hat\n3:58\ntrack 8 - Just Like a Woman\n4:52\ntrack 9 - Most Likely You Go Your Way\n3:30\ntrack 10 - Temporary Like Achilles\n5:03\ntrack 11 - Absolutely Sweet Marie\n4:57\ntrack 12 - 4th Time Around\n4:35\ntrack 13 - Obviously Five Believers\n3:36\ntrack 14 - Sad Eyed Lady of the Lowlands\n11:21");
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Released - 1966\nunder columbia records\n\ntrack 1 - Rainy Day Woman #12 & 35\n4:30\ntrack 2 - Pledging My Time\n3:50\ntrack 3 - Visions of Johanna\n7:33\ntrack 4 - One of Us Must Know (Sooner or Later)\n4:55\ntrack 5 - I Want You\n3:06\ntrack 6 - Stuck Inside of Mobile With the Memphis Blues Again\n7:06\ntrack 7 - Leopard‐Skin Pill‐Box Hat\n3:58\ntrack 8 - Just Like a Woman\n4:52\ntrack 9 - Most Likely You Go Your Way\n3:30\ntrack 10 - Temporary Like Achilles\n5:03\ntrack 11 - Absolutely Sweet Marie\n4:57\ntrack 12 - 4th Time Around\n4:35\ntrack 13 - Obviously Five Believers\n3:36\ntrack 14 - Sad Eyed Lady of the Lowlands\n11:21");
+        jScrollPane2.setViewportView(jTextArea2);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -61,11 +61,12 @@ public class Viewitemdetails extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)))
                 .addGap(240, 240, 240))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,7 +77,7 @@ public class Viewitemdetails extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -134,7 +135,7 @@ public class Viewitemdetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }
