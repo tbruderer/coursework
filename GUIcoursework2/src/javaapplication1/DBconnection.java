@@ -19,11 +19,47 @@ public class DBconnection {
      private static final String DB_NAME = "TBruderer_test"; //the final keyword is a costant//
      private static final String CONNECTION_STRING = "jdbc:mysql://computing.gfmat.org:3306/" + DB_NAME + "?user=TBruderer&useSSL=false";
 
-     private static final String TABLE_NAMES = "contacts";
-     private static final String COLUMN_EMAIL = "email";
-     private static final String COLUMN_PHONE = "phone";
-     private static final String COLUMN_NAME = "name";
+     private static final String TABLE_SONGS = "SONGS";
+     private static final String COLUMN_SONGNAME = "SONGNAME";
+     private static final String COLUMN_SONGID = "SONG_ID";
      
+     private static final String TABLE_ARTISTS = "ARTIST";
+     private static final String COLUMN_ARTIST_NAME = "ARTIST_NAME";
+     private static final String COLUMN_ARTIST_ID = "ARTIST_ID";
+     
+     private static final String TABLE_joinid = "jointable";
+     private static final String COLUMN_joinid = "joinid";
+     private static final String COLUMN_SONG_ID = "SONG_ID";
+     
+     
+     private static final String TABLE_genre = "genre";
+     private static final String COLUMN_genre_name = "genre_name";
+     private static final String COLUMN_genreID = "genreID";
+     
+     private static final String TABLE_LABEL = "LABEL";
+     private static final String COLUMN_LABELID = "LABELID";
+     private static final String COLUMN_LABELNAME = "LABELNAME";
+     
+     private static final String TABLE_DEALS = "DEALS";
+     private static final String COLUMN_DEALID = "DEALID";
+     private static final String COLUMN_PERCENTAGE = "DEALPERCENTAGE";
+     private static final String COLUMN_DEALTYPE = "DEALTYPE";
+     
+     private static final String TABLE_STAFF = "STAFF";
+     private static final String COLUMN_staff_ID = "staff_ID";
+     private static final String COLUMN_staffNAME = "staffNAME";
+     private static final String COLUMN_phoneno = "phoneno";
+     private static final String COLUMN_staffdob = "staffdob";
+     private static final String COLUMN_staffnin = "staffnin";
+     
+     private static final String TABLE_DEALLINK = "DEALLINK";
+     private static final String COLUMN_DEALLINKID = "DEALLINKID";
+     
+     private static final String TABLE_ALBUMS = "ALBUM";
+     private static final String COLUMN_STOCK = "STOCK";
+     private static final String COLUMN_LOWSTOCK = "LOWSTOCK";
+     private static final String COLUMN_RELEASEDATE = "RELEASEDATE";
+     private static final String COLUMN_BESTSELLER = "BESTSELLER";
      
      
        public static void main(String[] args) {
