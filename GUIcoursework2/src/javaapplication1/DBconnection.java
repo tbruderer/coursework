@@ -17,7 +17,7 @@ import java.sql.Statement;
  */
 public class DBconnection {
      private static final String DB_NAME = "TBruderer_test"; //the final keyword is a costant//
-     private static final String CONNECTION_STRING = "jdbc:mysql://computing.gfmat.org:3306/" + DB_NAME + "?user=TBruderer&useSSL=false";
+     private static final String CONNECTION_STRING = "jdbc:mysql://computing.gfmat.org:3306/" + DB_NAME + "?user=TBruderer&useSSL=true";
 
      private static final String TABLE_SONGS = "SONGS";
      private static final String COLUMN_SONGNAME = "SONGNAME";
@@ -55,7 +55,7 @@ public class DBconnection {
      private static final String TABLE_DEALLINK = "DEALLINK";
      private static final String COLUMN_DEALLINKID = "DEALLINKID";
      
-     private static final String TABLE_ALBUMS = "ALBUM";
+     private static final String TABLE_ALBUMS = "ALBUMS";
      private static final String COLUMN_STOCK = "STOCK";
      private static final String COLUMN_LOWSTOCK = "LOWSTOCK";
      private static final String COLUMN_RELEASEDATE = "RELEASEDATE";
@@ -67,9 +67,9 @@ public class DBconnection {
      
      
        public static void main(String[] args) {
-            try (   Connection conn = DriverManager.getConnection(CONNECTION_STRING, "1-TBruderer", "0mzM6ox");  
+            try (   Connection conn = DriverManager.getConnection(CONNECTION_STRING, "TBruderer", "6NvLdLh4Pw");  
                 Statement statement = conn.createStatement();) {
- try ( ResultSet results = statement.executeQuery("SELECT * FROM " + TABLE_ALBUMS + " WHERE " + COLUMN_STOCK + " = 'Thomas'");) 
+ try ( ResultSet results = statement.executeQuery("SELECT * FROM " + TABLE_ALBUMS + " WHERE " + COLUMN_ALBNAME + " = 'THOMAS'");) 
                 {
                     while (results.next()) {
                         System.out.println(results.getString(COLUMN_ALBNAME) + " "
