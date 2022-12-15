@@ -60,22 +60,37 @@ public class DBconnection {
      private static final String COLUMN_LOWSTOCK = "LOWSTOCK";
      private static final String COLUMN_RELEASEDATE = "RELEASEDATE";
      private static final String COLUMN_BESTSELLER = "BESTSELLER";
+     private static final String COLUMN_PRICE = "PRICE";
+     private static final String COLUMN_ALBNAME = "ALBNAME";
+     
+     
      
      
        public static void main(String[] args) {
+            try (   Connection conn = DriverManager.getConnection(CONNECTION_STRING, "1-TBruderer", "0mzM6ox");  
+                Statement statement = conn.createStatement();) {
+ try ( ResultSet results = statement.executeQuery("SELECT * FROM " + TABLE_ALBUMS + " WHERE " + COLUMN_STOCK + " = 'Thomas'");) 
+                {
+                    while (results.next()) {
+                        System.out.println(results.getString(COLUMN_ALBNAME) + " "
+                                + results.getInt(COLUMN_LOWSTOCK) + " "
+                                + results.getString(COLUMN_PRICE));
+                    }
+                }
+                catch (SQLException e) 
+                            
+                                 {
+            System.out.println("error:" + e.getMessage());
+                            }
 
-/**        try ( Connection conn = DriverManager.getConnection(CONNECTION_STRING, "TBruderer", "6NvLdLh4Pw");  Statement statement = conn.createStatement();) {
-*
-*           {
-*                System.out.println("error:" + e.getMessage());
- *           }
-*
- *       } catch (SQLException e) {
-  *          System.out.println("error" + e.getMessage());
-   *     }
-   * }
-*
-**/ 
+                        }
+            catch(SQLException e){
+            System.out.println("error" + e.getMessage());
+        }
+            }
+
+        }
+
 
        
-       }}
+       
