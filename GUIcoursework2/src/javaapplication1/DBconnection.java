@@ -69,7 +69,7 @@ public class DBconnection extends Inputorder {
     public static void main(String[] args, String SearchValue) {
          try ( Connection conn = DriverManager.getConnection(CONNECTION_STRING, "TBruderer", "6NvLdLh4Pw");  
                Statement statement = conn.createStatement();) {
-            try ( ResultSet results = statement.executeQuery("UPDATE " + TABLE_ALBUMS + " SET " + COLUMN_STOCK + "=" + COLUMN_STOCK + " - 1 WHERE " + COLUMN_ALBUMID + " = " + SearchValue);) {
+            try ( ResultSet results = statement.executeQuery("UPDATE " + TABLE_ALBUMS + " SET " + COLUMN_STOCK + " = " + COLUMN_STOCK + " - 1 WHERE " + COLUMN_ALBUMID + " = " + SearchValue);) {
                 System.out.println("UPDATED");
 
             } catch (SQLException e) {
