@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 public class DBconnection extends Inputorder {
 
     private static final String DB_NAME = "TBruderer_test"; //the final keyword is a costant//
-    private static final String CONNECTION_STRING = "jdbc:mysql://computing.gfmat.org:3306/" + DB_NAME + "?user=TBruderer&useSSL=true";
+    private static final String CONNECTION_STRING = "jdbc:mysql://computing.gfmat.org:3306/ " + DB_NAME + " ?user=TBruderer&useSSL=true";
 
     private static final String TABLE_SONGS = "SONGS";
     private static final String COLUMN_SONGNAME = "SONGNAME";
@@ -66,24 +66,38 @@ public class DBconnection extends Inputorder {
     private static final String COLUMN_ALBNAME = "ALBNAME";
     private static final String COLUMN_ALBUMID = "ALBUMID";
 
-    public static void main(String[] args, String SearchValue) {
-        {
-        }
-    }
-    public static void Inputorder(String[] args, String SearchValue) {
-         try ( Connection conn = DriverManager.getConnection(CONNECTION_STRING, "TBruderer", "6NvLdLh4Pw");  Statement statement = conn.createStatement();) {
-            try ( ResultSet results = statement.executeQuery("UPDATE " + TABLE_ALBUMS + " SET " + COLUMN_STOCK + "=" + COLUMN_STOCK + " - 1 WHERE " + COLUMN_ALBUMID + " = " + SearchValue);) {
-                System.out.println("UPDATED");
+    public static void main(String[] args) {
 
-            } catch (SQLException e) {
-                System.out.println("error:" + e.getMessage());
-            }
+    }
+
+    public static void Inputorder(String SearchValue) {
+        try ( Connection conn = DriverManager.getConnection(CONNECTION_STRING, "TBruderer", "6NvLdLh4Pw");  Statement statement = conn.createStatement();) {
+            statement.execute("UPDATE " + TABLE_ALBUMS + " SET " + COLUMN_STOCK + " = " + COLUMN_STOCK + " - 1 WHERE " + COLUMN_ALBUMID + " = " + SearchValue);
 
         } catch (SQLException e) {
             System.out.println("error" + e.getMessage());
         }
 
-        
     }
-    }
-        
+
+
+    
+
+    
+}
+//    public static void Inputorder(String[] args, String SearchValue) {
+//         try ( Connection conn = DriverManager.getConnection(CONNECTION_STRING, "TBruderer", "6NvLdLh4Pw");  Statement statement = conn.createStatement();) {
+//            try ( ResultSet results = statement.executeQuery("UPDATE " + TABLE_ALBUMS + " SET " + COLUMN_STOCK + "=" + COLUMN_STOCK + " - 1 WHERE " + COLUMN_ALBUMID + " = 1");) {
+//                System.out.println("UPDATED");
+//
+//            } catch (SQLException e) {
+//                System.out.println("error:" + e.getMessage());
+//            }
+//
+//        } catch (SQLException e) {
+//            System.out.println("error" + e.getMessage());
+//        }
+//
+//        
+//    }
+
