@@ -11,6 +11,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javaapplication1.DBconnection;
 
 /**
  *
@@ -127,10 +128,13 @@ public class Inputorder extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jButton1.addActionListener((ActionEvent e) -> {
-            String SearchValue = jTextField1.getText();
-            DBconnection.Inputorder();
-            jTextField1.setText("");
+        jButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String SearchValue = jTextField1.getText();
+                DBconnection.Inputorder(SearchValue);
+                jTextField1.setText("");
+            }
         });
     }//GEN-LAST:event_jButton1ActionPerformed
 
