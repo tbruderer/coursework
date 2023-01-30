@@ -65,6 +65,7 @@ public class DBconnection extends Inputorder {
     private static final String COLUMN_PRICE = "PRICE";
     private static final String COLUMN_ALBNAME = "ALBNAME";
     private static final String COLUMN_ALBUMID = "ALBUMID";
+    private static final String COLUMN_AMOUNTSOLD = "AMOUNTSOLD";
 
     public static void main(String[] args) {
 
@@ -72,7 +73,7 @@ public class DBconnection extends Inputorder {
 
     public static void Inputorder(String SearchValue) {
         try ( Connection conn = DriverManager.getConnection(CONNECTION_STRING, "TBruderer", "6NvLdLh4Pw");  Statement statement = conn.createStatement();) {
-            statement.execute("UPDATE " + TABLE_ALBUMS + " SET " + COLUMN_STOCK + " = " + COLUMN_STOCK + " - 1 WHERE " + COLUMN_ALBUMID + " = " + SearchValue);
+            statement.execute("UPDATE " + TABLE_ALBUMS + " SET " + COLUMN_STOCK + " = " + COLUMN_STOCK + " - 1, " + COLUMN_AMOUNTSOLD + " = " + COLUMN_AMOUNTSOLD + " + 1  WHERE " + COLUMN_ALBUMID + " = " + SearchValue + " ; ");
 
         } catch (SQLException e) {
             System.out.println("error" + e.getMessage());
@@ -80,11 +81,29 @@ public class DBconnection extends Inputorder {
 
     }
 
+    public static void Bestsellers() {
+        try ( Connection conn = DriverManager.getConnection(CONNECTION_STRING, "TBruderer", "6NvLdLh4Pw");  Statement statement = conn.createStatement();) {
 
-    
+            try ( ResultSet results = statement.executeQuery("SELECT AMOUNTSOLD, ALBUMID  FROM " + TABLE_ALBUMS + "");) {
+                while (results.next()) {
+                    System.out.println(results.getString(COLUMN_ALBNAME) + " "
+                            + results.getInt(COLUMN_AMOUNTSOLD) + " "
+                            + results.getString(COLUMN_LOWSTOCK));
+                }
+            } catch (SQLException e) {
+                System.out.println("error:" + e.getMessage());
+            }
 
-    
+        } catch (SQLException e) {
+            System.out.println("error" + e.getMessage());
+        }
+    }
 }
+
+
+
+  
+
 //    public static void Inputorder(String[] args, String SearchValue) {
 //         try ( Connection conn = DriverManager.getConnection(CONNECTION_STRING, "TBruderer", "6NvLdLh4Pw");  Statement statement = conn.createStatement();) {
 //            try ( ResultSet results = statement.executeQuery("UPDATE " + TABLE_ALBUMS + " SET " + COLUMN_STOCK + "=" + COLUMN_STOCK + " - 1 WHERE " + COLUMN_ALBUMID + " = 1");) {
