@@ -72,7 +72,6 @@ public class DBconnection extends Inputorder {
 
             try ( ResultSet results = statement.executeQuery("SELECT " + COLUMN_AMOUNTSOLD + " , " + COLUMN_ALBUMID + "  FROM " + TABLE_ALBUMS + " ORDER BY AMOUNTSOLD DESC ");) {
                 int counter = 0;
-                System.out.println("mawaf");
                 while (results.next() || counter<11) {
                         System.out.println(results.getInt(COLUMN_ALBUMID) + " "
                                 + results.getInt(COLUMN_AMOUNTSOLD));
