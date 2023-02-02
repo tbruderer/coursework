@@ -68,7 +68,26 @@ public class DBconnection extends Inputorder {
     private static final String COLUMN_AMOUNTSOLD = "AMOUNTSOLD";
 
     public static void main(String[] args) {
+   try ( Connection conn = DriverManager.getConnection(CONNECTION_STRING, "TBruderer", "6NvLdLh4Pw");  Statement statement = conn.createStatement();) {
 
+            try ( ResultSet results = statement.executeQuery("SELECT " + COLUMN_AMOUNTSOLD + " , " + COLUMN_ALBUMID + "  FROM " + TABLE_ALBUMS + " ORDER BY AMOUNTSOLD DESC ");) {
+                int counter = 0;
+                System.out.println("mawaf");
+                while (results.next() || counter<11) {
+                        System.out.println(results.getInt(COLUMN_ALBUMID) + " "
+                                + results.getInt(COLUMN_AMOUNTSOLD));
+                    counter++;
+                    }
+              
+                
+            
+            } catch (SQLException e) {
+                System.out.println("error:" + e.getMessage());
+            }
+
+        } catch (SQLException e) {
+            System.out.println("error" + e.getMessage());
+        }
     }
 
     public static void Inputorder(String SearchValue) {
@@ -82,21 +101,17 @@ public class DBconnection extends Inputorder {
     }
 
     public static void Bestsellers() {
-        try ( Connection conn = DriverManager.getConnection(CONNECTION_STRING, "TBruderer", "6NvLdLh4Pw");  Statement statement = conn.createStatement();) {
-
-            try ( ResultSet results = statement.executeQuery("SELECT AMOUNTSOLD, ALBUMID  FROM " + TABLE_ALBUMS + "");) {
-                while (results.next()) {
-                    System.out.println(results.getString(COLUMN_ALBNAME) + " "
-                            + results.getInt(COLUMN_AMOUNTSOLD) + " "
-                            + results.getString(COLUMN_LOWSTOCK));
-                }
-            } catch (SQLException e) {
-                System.out.println("error:" + e.getMessage());
-            }
-
-        } catch (SQLException e) {
-            System.out.println("error" + e.getMessage());
-        }
+//        try ( Connection conn = DriverManager.getConnection(CONNECTION_STRING, "TBruderer", "6NvLdLh4Pw");  Statement statement = conn.createStatement();) {
+//
+//            try ( ResultSet results = statement.executeQuery("SELECT AMOUNTSOLD, ALBUMID  FROM " + TABLE_ALBUMS + " ORDER BY AMOUNTSOLD DESC ");) {
+//                System.out.println(results);
+//            } catch (SQLException e) {
+//                System.out.println("error:" + e.getMessage());
+//            }
+//
+//        } catch (SQLException e) {
+//            System.out.println("error" + e.getMessage());
+//        }
     }
 }
 
