@@ -105,7 +105,24 @@ public class DBconnection extends Inputorder {
             System.out.println("error" + e.getMessage());
         }}
 
-}
+    public static void Delete(String delete)
+{
+        try ( Connection conn = DriverManager.getConnection(CONNECTION_STRING, "TBruderer", "6NvLdLh4Pw");  Statement statement = conn.createStatement();) {
+            statement.execute(" DELETE FROM " + TABLE_ALBUMS + (" WHERE " + COLUMN_ALBUMID + " = '" + delete + "' ; "));
+
+        } catch (SQLException e) {
+            System.out.println("error" + e.getMessage());
+        }
+
+    }
+            
+            
+            
+            
+            
+            
+            
+            }
 
 
 
